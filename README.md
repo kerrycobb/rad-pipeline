@@ -19,7 +19,9 @@ Concatenate any output from the process_radtags_i7.sh script that shares 3RAD ad
 cat <i7-index1_R1.fq.gz> <i7_index2_R2.fq.gz> ... project1_R1.fq.gz
 cat <i7-index1_R1.fq.gz> <i7_index2_R2.fq.gz> ... project1_R2.fq.gz
 ```
+# 3. Declone
 
-# 3. Demultiplex samples with 3RAD adapter indexes
+
+# 4. Demultiplex samples with 3RAD adapter indexes
 Prepare a barcodes file with the index sequences of the 3RAD adapters and the corresponding sample IDs. 
 A script to facilitate the generation of a barcodes file can be found at <https://github.com/kerrycobb/radseq-barcodes-file-gen>
