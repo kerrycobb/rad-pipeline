@@ -12,15 +12,16 @@ process_radtags_i7.sh \
   <output directory path> # Cannot already exist
 ```
 
-# 2. Concatenate
-Concatenate any output from the process_radtags_i7.sh script that shares 3RAD adapter indexes (i.e. contains samples from the same project).
+# 2. Declone
+Run `clone_filter.py` script.
+
+# 3. Concatenate
+Concatenate output from the clone_filter.py script that shares 3RAD adapter indexes (i.e. contains samples from the same project).
 #### Example:
 ```
 cat <i7-index1_R1.fq.gz> <i7_index2_R2.fq.gz> ... project1_R1.fq.gz
 cat <i7-index1_R1.fq.gz> <i7_index2_R2.fq.gz> ... project1_R2.fq.gz
 ```
-# 3. Declone
-
 
 # 4. Demultiplex samples with 3RAD adapter indexes
 Prepare a barcodes file with the index sequences of the 3RAD adapters and the corresponding sample IDs. 
