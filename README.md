@@ -14,9 +14,14 @@ process_radtags_i7.sh \
 
 # 2. Declone
 Run `clone_filter.py` script.
+```
+clone_filter.py \
+  <path to process_radtags output director> \
+  <path to declone output directory>
+```
 
 # 3. Concatenate
-Concatenate output from the clone_filter.py script that shares 3RAD adapter indexes (i.e. contains samples from the same project).
+Concatenate output from the clone_filter.py script sharing 3RAD adapter indexes (i.e. contains samples from the same project).
 #### Example:
 ```
 cat <i7-index1_R1.fq.gz> <i7_index2_R2.fq.gz> ... project1_R1.fq.gz
