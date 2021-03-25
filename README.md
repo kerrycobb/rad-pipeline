@@ -45,6 +45,7 @@ process_radtags_samples.sh \
 ```
 
 # Stacks Alignment
-## Run ustacks
+## 1. Run ustacks
 You will need to modify this script to work with your own HPC system.
+
 `run_ustacks.sh <demultiplexed sample directory> <output directory> <populations file>`
