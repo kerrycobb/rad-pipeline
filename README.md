@@ -42,6 +42,7 @@ process_radtags_samples.sh \
   <desired output directory path> \ # Cannot already exist
   <enzyme 1> \
   <enzyme 2> 
+```
 
 # Stacks Alignment
 ## Run ustacks
