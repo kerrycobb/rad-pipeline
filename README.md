@@ -56,7 +56,7 @@ run-ustacks.fish \
   <value for ustacks M param>
 ```
 
-## 2. Run ccstacks, sstacks, tsv2bam, and gstacks
+## 2. Run cstacks, sstacks, tsv2bam, and gstacks
 ```bash
 run-stacks-pipe.fish \
   <ustacks directory> \
