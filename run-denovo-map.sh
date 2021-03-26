@@ -3,15 +3,22 @@
 SAMPLE_DIR=$1
 OUT_DIR=$2
 POP_MAP=$3
-M=$4
-n=$5
-MAX_GAPS=$6
-ALN_LEN=$7
+M=$4  # number of mismatches allowed between stacks within individuals (for ustacks)
+n=$5  # number of mismatches allowed between stacks between individuals (for cstacks)
+# MAX_GAPS=$6
+# ALN_LEN=$7
 
-ALIGN_DIR=$OUT_DIR$(echo M${M}_n${n}_mg${MAX_GAPS}_al${ALN_LEN})
+ALIGN_DIR=$OUT_DIR$(echo M${M}_n${n})
+#ALIGN_DIR=$OUT_DIR/stern_align_defaults-mult-proc
 CAT_DIR=$ALIGN_DIR/catalog
-ALL_SNP_DIR=$ALIGN_DIR/all-snps_all-loci
+#ALL_SNP_DIR=$ALIGN_DIR/all-snps_all-loci
 # SINGLE_SNP_DIR=$ALIGN_DIR/out_single-snp_all-loci
+
+if [ -d $ALIGN_DIR ]
+then
+  echo "$ALIGN_DIR already exists"
+  exit 1
+fi
 
 mkdir -p $ALIGN_DIR
 mkdir -p $CAT_DIR
@@ -27,13 +34,13 @@ denovo_map.pl \
   -M $M -n $n \
   -T $PBS_NP \
   --paired \
-  -X "cstacks:--max-gaps $MAX_GAPS --min-aln-len $ALN_LEN" \
-  -X "populations: --out-path $ALL_SNP_DIR --fasta-samples --fasta-loci --structure --phylip-var --phylyp-var-all"
+#  -X "cstacks:--max-gaps $MAX_GAPS --min-aln-len $ALN_LEN" \
+#  -X "populations: --out-path $ALL_SNP_DIR --fasta-samples --fasta-loci --structure --phylip-var --phylyp-var-all"
 
 # # mv $CAT_DIR/populations* $ALL_SNP_DIR
 
 # Strip comment line from output
-sed -i '/^#/d' $ALL_SNP_DIR/populations.var.phylip
+# sed -i '/^#/d' $ALL_SNP_DIR/populations.var.phylip
 # sed -i '/^#/d' $ALL_SNP_DIR/populations.var.all.phylip
 
 

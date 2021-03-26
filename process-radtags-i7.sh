@@ -2,8 +2,8 @@
 
 READ1=$1
 READ2=$2
-BARCODES=config/barcodes-i7.tsv
-OUTDIR=output/process-radtags-i7/
+BARCODES=$3
+OUTDIR=$4
 
 if [ ! -d $OUTDIR ]
 then
